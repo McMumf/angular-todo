@@ -1,0 +1,31 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="1:1" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let user of users">
+    <mat-card>
+      <a [routerLink]="['/user', user.id ]"><mat-card-title>{{ user.first_name }}</mat-card-title></a>
+      <mat-card-content>
+        <div  *ngIf="user.Tasks.length > 0" > 
+          <mat-list *ngFor="let task of user.Tasks">
+            <mat-list-item> {{ task.task }} </mat-list-item>
+          </mat-list>
+        </div>
+        <div  *ngIf="user.Tasks.length === 0" > 
+          <mat-list>
+            <mat-list-item> Get Stuff Done</mat-list-item>
+            <mat-list-item> Actually Do Your Job </mat-list-item>
+            <mat-list-item> Suceed </mat-list-item>
+          </mat-list>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-card class="card-form">
+    <label for="first_name">First: </label>
+    <input matInput id="first_name" placeholder="New User" #firstName /> <br />
+    <label for="first_name">Last: </label>
+    <input matInput id="last_name" placeholder="New User" #lastName /> <br />
+    <label for="first_name">Email: </label>
+    <input matInput id="email" placeholder="New User" #email /> <br /><br />
+    <button mat-button (click)="addUser(firstName.value, lastName.value, email.value)">Add</button>
+</mat-card>

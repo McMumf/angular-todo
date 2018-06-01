@@ -1,0 +1,21 @@
+mat-card {
+    width: calc(100% - 70px);
+    height: auto;
+    margin: 10px 5px 10px 5px;
+}
+
+
+
+.card-form {
+    width: 50%;
+    height: auto;
+    margin: 10px;
+}
+
+@media (min-width: 600px){
+    .card-form {
+        width: 12.5%;
+        height: auto;
+        margin: 10px;
+    }
+}
