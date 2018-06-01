@@ -1,5 +1,5 @@
 # Ignore Database Config Files
-backend/config/config.json
+backend/config
 
 # Logs
 logs
